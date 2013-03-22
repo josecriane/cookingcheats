@@ -1,74 +1,177 @@
+@font-face {
+  font-family: denise;
+  src: url('denise_handwriting.ttf');
+}
+
 * { 
   margin: 0px;
   padding: 0px;
 }
 
 body {
-  background-color:#707070;
+  background-image: url("../images/background_texture.jpg");
+  background-repeat: repeat;
   font-family: arial;
 }
 
+/* Main menu
+ *
+ *
+ *
+ */
+
 #menu {
-  width: 100%;
+  width: 90%;
   height: 25px;
   color: #fff;
-  background-color: #000;
+  background-color: #333;
   text-align: center;
+  border-radius: 0px 0px 5px 5px;
+  border: 1px solid #000;
+  border-top: 0;
+  position:relative;
+  margin: 0px auto;
 }
 
-#menu_element{
+.menu_element{
   float: left;
+  font-size: 80%;
   padding: 2.5px 0px;
   padding-left: 10px;
-
+  color: #ccc;
+  font-weight: bold;
 }
 
-#footer {
-  width:100%;
-  height:20px;
-  position:absolute;
-  text-align: center;
-  bottom:0;
-  left:0;
-  background-color:#444;
+.pull_right {
+  float: right;
+  padding-left: 0;
+  padding-right: 10px;
 }
+
+#search_input {
+  margin-top: 1px;
+  border: 1px solid #010101;
+  border-radius: 5px;
+}
+
+.search_icon {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  display: block;
+}
+
+.icon_tile {
+  background-image: url("../images/glyphicons-halflings.png");
+}
+
+.search_icon button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  padding-left: 14px;
+  background-position: -48px 0px;
+}
+
 
 #content {
-  margin: 50px auto;
+  margin: 20px auto;
   width: 80%;
-  background-color: #aaa;
 }
+
+#rec_name {
+  font-family: denise;
+  margin-left: 130px;
+  text-align: left;
+  font-size: 275%;
+  padding: 15px;
+}
+
+
+
+/*
+ * Recipe text box
+ *
+ *
+ */
 
 #text {
   float: left;
-  margin: 0px auto;
-  padding-left: 5px;
-  margin-left: 5px;
-  padding-right: 5px;
-  margin-right: 5px;
+  margin: 0px 5px 0px -1px;
+  padding: 0 8px;
   text-align:justify;
-  width: 75%;
-  background-color: #999;
+  width: 55%;
+  border-radius: 0px 5px 5px 5px;
+  min-height: 300px;
+  background-color: #fff;
   border: 1px solid #010101;
-  margin-top: -1px;
-  border-radius: 5px;
-  border-top-left-radius: 0;
 }
+
+
+
+/* Recipe characteristics 
+ *
+ *
+ *
+ */
 
 #characteristics {
   float: left;
-  display: inline-block;
+  display: block;
+  margin-left: 10px;
   width: 200px;
-  background-color: #999;
+  height: 240px;
+  background-color: #fff;
   border: 1px solid #010101;
   border-radius: 5px;
-  margin-top: -1px;
+}
+
+.cello{
+  width: 35px;
+  height: 10px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.rotate-left {
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg); /* IE 9 */
+  -webkit-transform: rotate(-45deg); /* Safari and Chrome */
+  -o-transform: rotate(-45deg); /* Opera */
+  -moz-transform: rotate(-45deg); /* Firefox */
+}
+
+.rotate-right {
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Safari and Chrome */
+  -o-transform: rotate(45deg); /* Opera */
+  -moz-transform: rotate(45deg); /* Firefox */
+}
+
+#top-left {
+  margin-left: -10px;
+
+}
+
+#bottom-left {
+  margin-top: 230px;
+  margin-left: -10px;
+}
+
+#top-right {
+  margin-left: 180px;
+}
+
+#bottom-right {
+  margin-top: 227px;
+  margin-left: 176px;
 }
 
 #photo img{
   margin: 0px 0px;
-  border-radius: 5px 5px 0px 0px;
   border-bottom: 1px solid #010101;
+  border-radius: 5px 5px 0 0;
 }
 
 .att_label {
@@ -81,25 +184,72 @@ body {
   padding-right: 5px;
 }
 
+/* Social Icons
+ *
+ *
+ *
+ */
+ #social_icon {
+  float: left;
+  margin-top: 10px;
+  margin-left: 15px;
+ }
+
+ .icon {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+
+ }
+
+ #twitter {
+  background-color: #3388ff;
+ }
+
+ #facebook {
+  background-color: #0000ff
+ }
+
+ #google_plus {
+  background-color: red;
+ }
+
+
+/* Recipe Menu, Description, Ingredients, Preparation, Presentation 
+ *
+ *
+ *
+ */
+
 #rec_menu {
+  float: left;
   padding-left: 15px;
 }
 
 .rec_menu_element {
-  float: left;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 5px;
+  padding-right: 25px;
+  margin-left: 25px;
   border: 1px solid #010101;
   position: relative;
+  border-radius: 5px 2px 0 5px;
   border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 2px;
   z-index: 1;
-  margin-left: -10px;
-  background-color: #aaa;
+  margin-bottom: -1px;
+  background-color: #dadada;
+  height: 20px;
+  width: 75px;
 }
 
 .rec_menu_selected {
   z-index: 2;
-  background-color: #999;
-  border-bottom: 1px solid #999;
+  margin-left: 0;
+  background-color: #fff;
+  padding-top: 5px;
+  border-right: 1px solid #fff;
+  height: 25px;
+  width: 100px;
 }

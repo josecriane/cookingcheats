@@ -3,27 +3,34 @@
 
 <html xmlns ="http://www.w3.org/1999/xhtml">
   <head>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Tortilla de patatas y calabacín · CookingCheats</title>
   </head>
   
   <body>
     <div id="menu">
-      <div id="menu_element"><span id="index_label" />Index</div>
-      <div id="menu_element"><span id="help_label" />Help</div>
-      <div id="menu_element"><span id="search_label" />Search</div>
+      <div class="menu_element"><span id="index_label" />Index</div>
+      <div class="menu_element"><span id="help_label" />Help</div>
+      <div class="menu_element pull_right">
+        <form>
+          <input id="search_input" name="textfield" type="text" />
+          <span class="search_icon">
+            <button type="submit" class="icon_tile"></button>
+          </span>
+        </form>
+      </div>
     </div>
     <div id="content">
-      <!-- Recipe name -->
+      <div id="rec_name">Tortilla de patatas y calabacín </div>
       <div id="rec_menu">
-        <div class="rec_menu_element" ref="#"><span id="description_label" />Description</div>
-        <div class="rec_menu_element rec_menu_selected" ref="#"><span id="ingredients_label" />Ingredients</div>
+        <div class="rec_menu_element rec_menu_selected" ref="#"><span id="description_label" />Description</div>
+        <div class="rec_menu_element" ref="#"><span id="ingredients_label" />Ingredients</div>
         <div class="rec_menu_element" ref="#"><span id="preparation_label" />Preparation</div>
         <div class="rec_menu_element" ref="#"><span id="presentation_label" />Presentation</div>
       </div>
-      <div id="text">Lorem ipsum sint in non exercitation commodo tempor cupidatat mollit. Lorem ipsum irure adipisicing culpa esse magna Duis veniam officia aliquip in deserunt proident in nulla enim eiusmod eiusmod incididunt tempor aute.Lorem ipsum pariatur nisi nisi nulla deserunt dolor laboris id laboris. Lorem ipsum sit sunt et pariatur voluptate in officia sunt irure id eu incididunt nisi do voluptate nisi ex cupidatat adipisicing sunt ad nulla tempor fugiat consequat pariatur velit quis nostrud voluptate. Lorem ipsum eiusmod in qui sint dolor DuisLorem ipsum sint in non exercitation commodo tempor cupidatat mollit. Lorem ipsum irure adipisicing culpa esse magna Duis veniam officia aliquip in deserunt proident in nulla enim eiusmod eiusmod incididunt tempor aute.Lorem ipsum pariatur nisi nisi nulla deserunt dolor laboris id laboris. Lorem ipsum sit sunt et pariatur voluptate in officia sunt irure id eu incididunt nisi do voluptate nisi ex cupidatat adipisicing sunt ad nulla tempor fugiat consequat pariatur velit quis nostrud voluptate. Lorem ipsum eiusmod in qui sint dolor DuisLorem ipsum sint in non exercitation commodo tempor cupidatat mollit. Lorem ipsum irure adipisicing culpa esse magna Duis veniam officia aliquip in deserunt proident in nulla enim eiusmod eiusmod incididunt tempor aute.Lorem ipsum pariatur nisi nisi nulla deserunt dolor laboris id laboris. Lorem ipsum sit sunt et pariatur voluptate in officia sunt irure id eu incididunt nisi do voluptate nisi ex cupidatat adipisicing sunt ad nulla tempor fugiat consequat pariatur velit quis nostrud voluptate. Lorem ipsum eiusmod in qui sint dolor DuisLorem ipsum sint in non exercitation commodo tempor cupidatat mollit. Lorem ipsum irure adipisicing culpa esse magna Duis veniam officia aliquip in deserunt proident in nulla enim eiusmod eiusmod incididunt tempor aute.Lorem ipsum pariatur nisi nisi nulla deserunt dolor laboris id laboris. Lorem ipsum sit sunt et pariatur voluptate in officia sunt irure id eu incididunt nisi do voluptate nisi ex cupidatat adipisicing sunt ad nulla tempor fugiat consequat pariatur velit quis nostrud voluptate. Lorem ipsum eiusmod in qui sint dolor Duis</div>
+      <div id="text">Lorem ipsum sint in non exercitation commodo tempor cupidatat mollit. Lorem ipsum irure adipisicing culpa esse magna Duis veniam officia aliquip in deserunt proident in nulla enim eiusmod eiusmod incididunt tempor aute.Lorem ipsum pariatur nisi nisi nulla deserunt dolor laboris id laboris. Lorem ipsum sit sunt et pariatur voluptate in officia sunt irure id eu incididunt nisi do voluptate nisi ex cupidatat adipisicing sunt </div>
       <div id="characteristics">
+        <div class="cello rotate-left" id="top-left"></div><div class="cello rotate-right" id="top-right"></div><div class="cello rotate-right" id="bottom-left"></div><div class="cello rotate-left" id="bottom-right"></div>
         <div id="photo"><img src="test.jpg" /></div>
         <div id="recipe_attributes">
           <span class="att_label" id="difficulty_label">Difficulty</span><div class="att_name" id="difficulty_name">2 cups</div>
@@ -34,8 +41,12 @@
           <div id="time"></div>
         </div>
       </div>
+      <div id="social_icon">
+        <div class="icon" id="twitter"></div>
+        <div class="icon" id="facebook"></div>
+        <div class="icon" id="google_plus"></div>
+      </div>
     </div>
-    <div id="footer">Powered by josecriane</div>
   </body>
 
   <script>
