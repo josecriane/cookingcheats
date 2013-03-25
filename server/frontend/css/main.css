@@ -76,16 +76,16 @@ body {
 
 #content {
   margin: 20px auto;
-  width: 80%;
+  width: 70%;
   min-width: 860px;
 }
 
 #rec_name {
   font-family: denise;
-  margin-left: 130px;
+  margin-left: 70px;
   text-align: left;
   font-size: 275%;
-  padding: 15px;
+  padding: 15px 0px;
 }
 
 
@@ -101,9 +101,9 @@ body {
   margin: 0px 5px 0px -1px;
   padding: 0 8px;
   text-align:justify;
-  width: 55%;
+  width: 60%;
   border-radius: 0px 5px 5px 5px;
-  min-height: 300px;
+  min-height: 450px;
   background-color: #fff;
   border: 1px solid #010101;
 }
@@ -115,11 +115,13 @@ body {
  *
  *
  */
-
-#characteristics {
+#r_side {
   float: left;
   display: block;
   margin-left: 10px;
+}
+
+#characteristics {
   width: 200px;
   height: 240px;
   background-color: #fff;
@@ -148,6 +150,14 @@ body {
   -webkit-transform: rotate(45deg); /* Safari and Chrome */
   -o-transform: rotate(45deg); /* Opera */
   -moz-transform: rotate(45deg); /* Firefox */
+}
+
+.rotate_90 {
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+  -o-transform: rotate(-90deg); /* Opera */
+  -moz-transform: rotate(-90deg); /* Firefox */
 }
 
 #top-left {
@@ -193,7 +203,7 @@ body {
  #social_icons {
   float: left;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 5px;
  }
 
  .icon {
@@ -225,32 +235,41 @@ body {
 
 #rec_menu {
   float: left;
-  padding-left: 15px;
+  margin-right: -44px;
+  margin-top: -41px;
+  min-height: 450px;
 }
 
 .rec_menu_element {
-  padding-left: 5px;
-  padding-right: 25px;
-  margin-left: 25px;
   border: 1px solid #010101;
   position: relative;
-  border-radius: 5px 2px 0 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 2px;
+  border-radius: 5px 5px 2px 0px;
   z-index: 1;
-  margin-bottom: -1px;
   background-color: #dadada;
-  height: 20px;
-  width: 75px;
+  padding-right: 3px;
+  padding-left: 4px;
+  margin-top: 85px;
+  min-width: 100px;
+  max-width: 100px;
 }
 
 .rec_menu_selected {
   z-index: 2;
-  margin-left: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-top: 81px;
+  margin-bottom: -1px;
+  margin-left: -4px;
   background-color: #fff;
-  padding-top: 5px;
-  border-right: 1px solid #fff;
-  height: 25px;
-  width: 100px;
+  border-bottom: 1px solid #fff;
+}
+
+#social_iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  display: none;
+  height: 450px;
+  width: 860px;
 }
