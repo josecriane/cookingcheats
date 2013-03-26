@@ -36,7 +36,7 @@ class DBaccess {
 
     /*  Execute a modification sql query in database
         returns the number of row affected, or false if it fails. */ 
-    public function ejecutarAccion ($query) {
+    public function doModify ($query) {
         $result = @$this->bd->query($query);
         if ($result) {
             $this->error_number = 0;
@@ -51,7 +51,7 @@ class DBaccess {
   
     /*  Execute a select sql query in database
         returns a array, of false if it fails. */
-    public function obtenerDatos($query) {
+    public function doSelect ($query) {
         $result = @$this->bd->query($query);
         if ($result) {
             $this->error_number = $this->bd->errno;
