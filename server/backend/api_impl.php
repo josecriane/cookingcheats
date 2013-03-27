@@ -2,11 +2,14 @@
 require('DBaccess.php');
 
 function getRecipeImpl ( $RecipeId ) {
-	error_log($RecipeId);
     $dba = new DBaccess();
-    error_log($dba);
     $query = "SELECT * FROM RECIPE WHERE RecipeId = '$RecipeId' ;";
     $result = $dba->doSelect($query);
+
+    $queryIngredients = "SELECT i.IngName, i.IngPhoto, i.Kcal, c.Amount 
+                            FROM CONTAINS c JOIN INGREDIENT i on c.IngredientId = i.ingredientId 
+                            WHERE c.RecipeId = '$RecipeId' ;";
+    $result['Ingredients'] = $dba->doSelect($queryIngredients);
     
     if ($result == false) {
     	echo $_GET['callback'].'('.json_encode(false).')';
