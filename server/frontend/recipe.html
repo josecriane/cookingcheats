@@ -2,20 +2,87 @@
 <!DOCTYPE html>
 
 <html xmlns ="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Tortilla de patatas y calabacín · CookingCheats</title>
+    <meta name="description" content="">
+    <script src="http://yui.yahooapis.com/3.9.0/build/yui/yui-min.js"></script>
+  </head>
+  
   <body>
-    <div id="content"></div>
-    <div id="recipe_menu">
+    <div id="menu">
+      <div class="menu_element"><span id="index_label" />Index</div>
+      <div class="menu_element"><span id="help_label" />Help</div>
+      <div class="menu_element pull_right">
+        <form>
+          <input id="search_input" name="textfield" type="text" />
+          <span class="search_icon">
+            <button type="submit" class="icon_tile"></button>
+          </span>
+        </form>
+      </div>
     </div>
-    <div id="photograph"></div>
-    <div id="recipe_atributes">
-      <div id="recipe_name"></div>
-      <div id="difficulty"></div>
-      <div id="diners"></div>
-      <div id="time"></div>
+    <div id="content">
+      <div id="rec_name">Tortilla de patatas y calabacín </div>
+      <div id="rec_menu">
+        <div class="rec_menu_element rotate_90 rec_menu_selected"><span id="description_label" />Description</div>
+        <div class="rec_menu_element rotate_90"><span id="ingredients_label" />Ingredients</div>
+        <div class="rec_menu_element rotate_90"><span id="preparation_label" />Preparation</div>
+        <div class="rec_menu_element rotate_90"><span id="presentation_label" />Presentation</div>
+      </div>
+      <div id="text">Lorem ipsum sint in non exercitation commodo tempor cupidatat mollit. Lorem ipsum irure adipisicing culpa esse magna Duis veniam officia aliquip in deserunt proident in nulla enim eiusmod eiusmod incididunt tempor aute.Lorem ipsum pariatur nisi nisi nulla deserunt dolor laboris id laboris. Lorem ipsum sit sunt et pariatur voluptate in officia sunt irure id eu incididunt nisi do voluptate nisi ex cupidatat adipisicing sunt </div>
+      <div id="r_side">
+        <div id="characteristics">
+          <div class="cello rotate-left" id="top-left"></div>
+          <div class="cello rotate-right" id="top-right"></div>
+          <div class="cello rotate-right" id="bottom-left"></div>
+          <div class="cello rotate-left" id="bottom-right"></div>
+          <div id="photo"><img src="test.jpg" /></div>
+          <div id="recipe_attributes">
+            <span class="att_label" id="difficulty_label">Difficulty</span><div class="att_name" id="difficulty_name">2 cups</div>
+            <span class="att_label" id="average_label">Average</span><div class="att_name" id="average_name">4 forks</div>
+            <span class="att_label" id="diners_label">Dinners</span><div class="att_name" id="diners_name">4 dinners</div>
+            <span class="att_label" id="time_label">Time</span><div class="att_name" id="time_name">20 min</div>
+            <div id="diners"></div>
+            <div id="time"></div>
+          </div>
+        </div>
+        <div id="social_icons">
+          <div class="icon" id="twitter"></div>
+          <a class="icon" id="facebook" href="" targer="_self"></a>
+          <div class="icon" id="google_plus"></div>
+        </div>
+      </div>
     </div>
-    <div id="recipe_description"></div>
-    <div id="preparation"></div>
-    <div id="presentation"></div>
-    <div id="video"></div>
   </body>
+
+  <script>
+    YUI().use('node', function(Y) {
+      var menu_change = function (e) {
+      var button_clicked = e.currentTarget;
+      var button_selected = Y.one('.rec_menu_selected');
+        button_selected.removeClass('rec_menu_selected');
+        button_clicked.addClass('rec_menu_selected');
+      };
+
+      var buttons = Y.all('.rec_menu_element');
+      buttons.each( function (button) { 
+        button.on('click', menu_change);
+      });
+
+      var social_share = function () {
+        var ficon = document.getElementById('facebook');
+        ficon.href = 'http://www.facebook.com/sharer.php?s=100&p[url]=cookingcheats.com&p[images][0]=' + document.getElementById('photo').children[0].src + '&p[title]=' + document.getElementById('rec_name').innerHTML + '&p[summary]=' + gen_summary();
+        var ticon = document.getElementById('twitter');
+        var gicon = document.getElementById('google_plus');
+      }
+
+      var gen_summary = function () {
+        return "Texto en español"
+      }
+
+      social_share();
+
+    });
+  </script>
 </html> 
