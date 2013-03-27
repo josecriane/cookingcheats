@@ -11,7 +11,7 @@ class DBaccess {
     // Class constructor
     public function __construct () {
         $this->bd = @new mysqli(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
-    
+        mysqli_set_charset($this->bd, "utf8"); //set charset to utf8.
         if (mysqli_connect_errno()==0) {
             $this->error_number = 0;
             $this->error_text = "";
@@ -56,8 +56,9 @@ class DBaccess {
         if ($result) {
             $this->error_number = $this->bd->errno;
             $this->error_text = $this->bd->error;
-            for($i=0; $i<$result->num_rows; $i++)
+            for($i=0; $i<$result->num_rows; $i++){
                 $return[$i] = $result->fetch_assoc();
+            }
         } else { // query fails
             $this->error_number = $this->bd->errno;
             $this->error_text = $this->bd->error;

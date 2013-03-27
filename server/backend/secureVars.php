@@ -27,7 +27,7 @@ final class secureVars{
     $this->tmp = htmlspecialchars($_REQUEST[$field], ENT_QUOTES, 'UTF-8', false); 
   }
 
-  /* Checks if the value respects the defined regexp,
+  /* Checks if the value respects the   defined regexp,
   and if its length is not superior than the given maxlength. */
   public function secText($field, $maxlength, $regexp){
     if($this->cisSet($field)){
