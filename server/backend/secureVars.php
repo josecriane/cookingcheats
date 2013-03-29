@@ -7,6 +7,7 @@ $secureVars = new secureVars();
 //Defined regexps (you can add your own ones).
 define('REG_DIGIT_UNSIGNED', '^[[:digit:]]+$');
 define('REG_WORD'          , '^[[:alpha:]]+$');
+define('REG_TEXT'          , '^[[:alpha:][:blank:]]+$');
 
 error_reporting(0); //Comment before deploying
 

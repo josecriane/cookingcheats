@@ -18,10 +18,17 @@
 
 		    		getRecipesByCategory($CategoryId, intval($page));
 		    		break;
+		    	case "searchRecipe":
+		    		$keywords = $secureVars->secText("Keywords", 255, REG_TEXT);
+		    		$page = $secureVars->secText("Page", 11, REG_DIGIT_UNSIGNED);
+
+		    		searchRecipe($keywords, intval($page));
+		    		break;
+
 			}
 		}
 	} catch (Exception $e) {
-		echo "Excepction catch ".$e->getMessage()."\n";
+		echo "Excepction catch ".$e->getMessage()."\n"; //Comment this line before deploy.
 		echo $_GET['callback'].'('.json_encode(false).')';
 	}
 ?>
