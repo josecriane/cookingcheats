@@ -10,18 +10,22 @@
   </head>
   
   <body>
-    <div id="menu">
-      <div class="menu_element"><span id="index_label" />Index</div>
-      <div class="menu_element"><span id="help_label" />Help</div>
-      <div class="menu_element pull_right">
-        <form>
-          <input id="search_input" name="textfield" type="text" />
-          <span class="search_icon">
-            <button type="submit" class="icon_tile"></button>
-          </span>
-        </form>
+    <header>
+      <div class="inner">
+        <div id="menu">
+          <div class="menu_element current_element"><span id="index_label" />Index</div>
+          <div class="menu_element"><span id="help_label" />Help</div>
+        </div>
+        <div class="pull_right">
+          <form>
+            <input id="search_input" name="textfield" type="text" />
+            <span class="search_icon">
+              <button type="submit" class="icon nav_search" value=""></button>
+            </span>
+          </form>
+        </div>
       </div>
-    </div>
+    </header>
     <div id="content">
       <div id="rec_name">Tortilla de patatas y calabacín </div>
       <div id="rec_menu">
@@ -32,7 +36,7 @@
       </div>
       <div id="text">Lorem ipsum sint in non exercitation commodo tempor cupidatat mollit. Lorem ipsum irure adipisicing culpa esse magna Duis veniam officia aliquip in deserunt proident in nulla enim eiusmod eiusmod incididunt tempor aute.Lorem ipsum pariatur nisi nisi nulla deserunt dolor laboris id laboris. Lorem ipsum sit sunt et pariatur voluptate in officia sunt irure id eu incididunt nisi do voluptate nisi ex cupidatat adipisicing sunt </div>
       <div id="r_side">
-        <div id="characteristics">
+        <div id="characteristics" class="shadow_content">
           <div class="cello rotate-left" id="top-left"></div>
           <div class="cello rotate-right" id="top-right"></div>
           <div class="cello rotate-right" id="bottom-left"></div>
@@ -48,9 +52,9 @@
           </div>
         </div>
         <div id="social_icons">
-          <div class="icon" id="twitter"></div>
-          <a class="icon" id="facebook" href="" targer="_self"></a>
-          <div class="icon" id="google_plus"></div>
+          <div class="social_icon" id="twitter"></div>
+          <a class="social_icon" id="facebook" href="" targer="_self"></a>
+          <div class="social_icon" id="google_plus"></div>
         </div>
       </div>
     </div>
