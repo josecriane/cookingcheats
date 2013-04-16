@@ -8,22 +8,23 @@
 		if(isset($_GET['method'])){
 			switch ($_GET['method']) {
 				case "getRecipe":
+
 					$recipeId = $secureVars->secText("RecipeId", 11, REG_DIGIT_UNSIGNED);
 		    		
-		    		getRecipeImpl($recipeId);
-		    		break;
-		    	case "getRecipesByCategory":
-		    		$categoryId = $secureVars->secText("CategoryId", 11, REG_DIGIT_UNSIGNED);
+	    		getRecipeImpl($recipeId);
+	    		break;
+	    	case "getRecipesByCategory":
+	    		$categoryId = $secureVars->secText("CategoryId", 11, REG_DIGIT_UNSIGNED);
 					$page = $secureVars->secText("Page", 11, REG_DIGIT_UNSIGNED);
 
-		    		getRecipesByCategory($CategoryId, intval($page));
-		    		break;
-		    	case "searchRecipe":
-		    		$keywords = $secureVars->secText("Keywords", 255, REG_TEXT);
-		    		$page = $secureVars->secText("Page", 11, REG_DIGIT_UNSIGNED);
+	    		getRecipesByCategory($CategoryId, intval($page));
+	    		break;
+	    	case "searchRecipe":
+	    		$keywords = $secureVars->secText("Keywords", 255, REG_TEXT);
+	    		$page = $secureVars->secText("Page", 11, REG_DIGIT_UNSIGNED);
 
-		    		searchRecipe($keywords, intval($page));
-		    		break;
+	    		searchRecipe($keywords, intval($page));
+	    		break;
 
 			}
 		}

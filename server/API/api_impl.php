@@ -3,13 +3,13 @@ require('DBaccess.php');
 
 function getRecipeImpl ( $recipeId ) {
     $dba = new DBaccess();
-    $query = "SELECT * FROM RECIPE WHERE RecipeId = '$RecipeId' ;";
+    $query = "SELECT * FROM RECIPE WHERE RecipeId = '$recipeId' ;";
     $result = $dba->doSelect($query);
 
     $queryIngredients = "SELECT i.IngName, i.IngPhoto, i.Kcal, c.Amount 
                             FROM CONTAINS c JOIN INGREDIENT i on c.IngredientId = i.ingredientId 
                             WHERE c.RecipeId = '$recipeId' ;";
-    $result['Ingredients'] = $dba->doSelect($queryIngredients);
+    $result[0]['Ingredients'] = $dba->doSelect($queryIngredients);
     
     returnJSON($result);
 }
@@ -51,9 +51,9 @@ function searchRecipe ( $keywords, $page ) {
 
 function returnJSON ($return) {
     if ($return == false) {
-        echo $_GET['callback'].'('.json_encode(false).')';
+        echo $_GET['callback'].json_encode(false);
     } else {
-        echo $_GET['callback'].'('.json_encode($return, JSON_UNESCAPED_UNICODE).')';
+        echo $_GET['callback'].json_encode($return, JSON_UNESCAPED_UNICODE);
     }
 }
 

@@ -25,6 +25,10 @@ class DBaccess {
     public function __destruct() {
         $this->bd->close();
     }
+
+    public function close() {
+        $this->bd->close();
+    }
   
     public function getErrorNumber () {
         return $this->error_number;

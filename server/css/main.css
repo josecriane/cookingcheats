@@ -1,6 +1,6 @@
 @font-face {
   font-family: denise;
-  src: url('denise_handwriting.ttf');
+  src: url('../res/denise_handwriting.ttf');
 }
 
 * { 
@@ -9,8 +9,6 @@
 }
 
 body {
-  /* background-image: url("../images/background_texture.jpg"); 
-  background-repeat: repeat; */
   background-color: #f9d06d;
   font-family: arial;
 }
@@ -38,7 +36,7 @@ button {
 
 .icon {
   display: inline-block;
-  background-image: url("../images/glyphicons-halflings.png");
+  background-image: url("../res/glyphicons-halflings.png");
   background-position: 0 0;
   background-repeat: no-repeat;
 }
@@ -268,15 +266,15 @@ header {
  }
 
  #twitter {
-  background-image: url("../images/twitter_icon.png");
+  background-image: url("../res/twitter_icon.png");
  }
 
  #facebook {
-  background-image: url("../images/facebook_icon.png");
+  background-image: url("../res/facebook_icon.png");
  }
 
  #google_plus {
-  background-image: url("../images/gplus_icon.png");
+  background-image: url("../res/gplus_icon.png");
  }
 
 
