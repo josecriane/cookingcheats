@@ -5,7 +5,7 @@ var YUI_config = {
       modules: {
         'recipe': {
           path: 'recipe.js',
-          requires: ['model', 'ingredient']
+          requires: ['model']
         },
         'ingredient': {
           path: 'ingredient.js',

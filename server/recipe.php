@@ -48,10 +48,12 @@
   </body>
 
   <script>
-    YUI().use('node', 'io', 'json', 'recipe', function(Y) {
 
+    var recipe_test;
+    YUI().use('io', 'json', 'recipe', function ( Y ) {
       var change_text;
       getRecipe(Y, '1', function(Y, recipe){
+        recipe_test = recipe;
         change_text = set_recipe(Y, recipe);
       });
 
@@ -68,36 +70,36 @@
         button.on('click', menu_change);
       });
 
-    });
 
-
-    var set_text = function (node, text){
-      node.setHTML(text);
-    }
-
-    var init_recipe = function (Y, recipe){
-      set_text(Y.one('#rec_name'), recipe.get('RecName'));
-      set_text(Y.one('#difficulty_name'), recipe.get('Difficulty'));
-      set_text(Y.one('#average_name'), '5');
-      set_text(Y.one('#diners_name'), recipe.get('NumDiners'));
-      set_text(Y.one('#time_name'), recipe.get('Time'));
-      set_text(Y.one('#text'), recipe.get('RecDescription'));
-    }
-
-    var set_recipe = function ( Y, recipe ) {
-      var recipe =  recipe;
-      var Y = Y;
-
-      init_recipe(Y, recipe);
-      var change_text = function () {    
-        var text_div = document.getElementById("text");
-        var element = Y.one('.rec_menu_selected');
-        if (element.contains(description_label)) { text_div.innerHTML = recipe.get('RecDescription'); }
-        if (element.contains(ingredients_label)) { text_div.innerHTML = recipe.get('Ingredients'); }
-        if (element.contains(preparation_label)) { text_div.innerHTML = recipe.get('Preparation'); }
-        if (element.contains(presentation_label)) { text_div.innerHTML = recipe.get('Presentation'); }
+      var set_text = function (node, text){
+        node.setHTML(text);
       }
-      return change_text;
-    }
+
+      var init_recipe = function (Y, recipe){
+        set_text(Y.one('#rec_name'), recipe.get('RecName'));
+        set_text(Y.one('#difficulty_name'), recipe.get('Difficulty'));
+        set_text(Y.one('#average_name'), '5');
+        set_text(Y.one('#diners_name'), recipe.get('NumDiners'));
+        set_text(Y.one('#time_name'), recipe.get('Time'));
+        set_text(Y.one('#text'), recipe.get('RecDescription'));
+      }
+
+      var set_recipe = function ( Y, recipe ) {
+        var recipe =  recipe;
+        var Y = Y;
+
+        init_recipe(Y, recipe);
+        var change_text = function () {    
+          var text_div = Y.one('#text');
+          var element = Y.one('.rec_menu_selected');
+          if (element.contains(description_label)) { set_text(text_div, recipe.get('RecDescription')); }
+          if (element.contains(ingredients_label)) { recipe.fillIngredientsIn(text_div); }
+          if (element.contains(preparation_label)) { recipe.fillPreparationIn(text_div); }
+          if (element.contains(presentation_label)) { set_text(text_div, recipe.get('Presentation')); }
+        }
+        return change_text;
+      }
+
+    });
   </script>
 </html> 
