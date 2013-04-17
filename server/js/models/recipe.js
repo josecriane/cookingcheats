@@ -9,7 +9,6 @@ YUI().add('recipe', function(Y){
       for ( var index in prev_ingredients ) {
         next_ingredients.push(new Y.Ingredient(prev_ingredients[index]));
       }
-      alert(next_ingredients[0].printWithSearch());
       this.set('Ingredients', next_ingredients);
     },
     

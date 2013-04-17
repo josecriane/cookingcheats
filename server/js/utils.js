@@ -1,6 +1,7 @@
 
 
-getRecipe = function ( Y, recipeId, callback ) {
+getRecipe = function ( Y, callback ) {
+  var recipeId = window.location.hash.split('#!')[1];
   Y.io('http://localhost/API/api.php', {
     data: 'method=getRecipe&RecipeId='+ recipeId,
     on: {

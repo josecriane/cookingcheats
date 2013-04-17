@@ -49,11 +49,12 @@
 
   <script>
 
-    var recipe_test;
     YUI().use('io', 'json', 'recipe', function ( Y ) {
+
+      //Needs a solution on YUI3
+
       var change_text;
-      getRecipe(Y, '1', function(Y, recipe){
-        recipe_test = recipe;
+      getRecipe(Y, function(Y, recipe){
         change_text = set_recipe(Y, recipe);
       });
 
