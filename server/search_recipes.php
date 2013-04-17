@@ -7,18 +7,46 @@
     <title>CookingCheats</title>
     <meta name="description" content="">
     <script src="http://yui.yahooapis.com/3.9.0/build/yui/yui-min.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/model.js"></script>
   </head>
   
   <body>
     <?php include "main_bar.php" ?>
     <div id="content">
-      <!--DOCTYPE
-        This section will be created using js, because this section is 100% dinamic
-
-      -->
     </div>
   </body>
+  
+  <script id="list-template" type="text/x-handlebars-template">
+    <ul id="recipes" class="inner shadow_content">
+      {{#items}}
+        <a href="recipe.php#!{{RecipeId}}">
+          <li>
+            <img src="test.jpg">
+            <div id="recipe_info">
+              <div id="rec_name">{{RecName}}</div>
+              <div id="description">{{RecDescription}}</div>
+            </div>
+          </li>
+        </a>
+      {{/items}}
+    </ul>
+  </script>
 
   <script>
+      YUI().use('io', 'json', 'recipe', 'node-base', 'handlebars', function ( Y ) {
+
+      var source = Y.one('#list-template').getHTML(),
+          template = Y.Handlebars.compile(source),
+          html;
+
+      searchRecipes(Y, function(recipes){
+        html = template ({
+          items: recipes
+        });
+
+        Y.one('#content').append(html);
+      });
+    });
   </script>
 </html> 

@@ -48,10 +48,7 @@
   </body>
 
   <script>
-
     YUI().use('io', 'json', 'recipe', function ( Y ) {
-
-      //Needs a solution on YUI3
 
       var change_text;
       getRecipe(Y, function(Y, recipe){
@@ -70,21 +67,7 @@
       buttons.each( function (button) { 
         button.on('click', menu_change);
       });
-
-
-      var set_text = function (node, text){
-        node.setHTML(text);
-      }
-
-      var init_recipe = function (Y, recipe){
-        set_text(Y.one('#rec_name'), recipe.get('RecName'));
-        set_text(Y.one('#difficulty_name'), recipe.get('Difficulty'));
-        set_text(Y.one('#average_name'), '5');
-        set_text(Y.one('#diners_name'), recipe.get('NumDiners'));
-        set_text(Y.one('#time_name'), recipe.get('Time'));
-        set_text(Y.one('#text'), recipe.get('RecDescription'));
-      }
-
+      
       var set_recipe = function ( Y, recipe ) {
         var recipe =  recipe;
         var Y = Y;
