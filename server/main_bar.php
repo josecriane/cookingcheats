@@ -2,7 +2,7 @@
   <div class="inner">
     <div id="menu">
       <div class="menu_element"><a href="./index.php" id="index_label">Index</a></div>
-      <div class="menu_element"><a href="" id="search_label">Help</a></div>
+      <div class="menu_element"><a href="" id="about_label">About</a></div>
     </div>
     <div class="pull_right">
       <form action="./search_recipes.php">

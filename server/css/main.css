@@ -11,6 +11,7 @@
 body {
   background-color: #f9d06d;
   font-family: arial;
+  font-size: 16px;
 }
 
 form {
@@ -140,17 +141,64 @@ header {
 #content {
   margin: 20px auto;
   width: 70%;
-  min-width: 800px;
+  min-width: 50em;
 }
 
 #rec_name {
   font-family: denise;
   margin-left: 70px;
   text-align: left;
-  font-size: 275%;
+  font-size: 2.75em;
   padding: 15px 0px;
 }
 
+/** BEGIN CSS to index page **/
+.title {
+  font-family: denise;
+  text-align: center;
+  font-size: 7em;
+  margin-bottom: 0.5em;
+}
+
+#proposal_recipes {
+  background-color: rgba(0,0,0, 0.2);
+  border-radius: 5px;
+  margin-top: 1.2em;
+  padding: 1em 0 1em 0;
+  float: left;
+  width: 37em;
+}
+
+#proposal_label {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+#proposal_recipes figure {
+  display: inline-block;
+  width: 12em;
+}
+
+#proposal_recipes figure img{
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 10em;
+}
+
+#proposal_recipes figure #rec_name{
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#pet_logo {
+  width: 20em;
+  float: right;
+}
+/** END CSS to index page **/
 
 /** BEGIN CSS to search page **/
 
@@ -207,10 +255,6 @@ header {
 #recipes a:nth-child(even) li img {
   float: right;
 }
-
-
-
-
 
 /** END CSS to search page **/
 

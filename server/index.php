@@ -12,6 +12,28 @@
   <body>
     <?php include "main_bar.php"; ?>
 
+    <div id="content" class="inner">
+      <div class="title">CookingCheats</div>
+      <div id="proposal_recipes" class="shadow_content">
+        <div id="proposal_label">Te proponemos las siguientes recetas</div>
+        <figure>
+          <img src="test.jpg">
+          <div id="rec_name">Recipe Name</div>
+        </figure>
+        <figure>
+          <img src="test.jpg">
+          <div id="rec_name">Recipe Name</div>
+        </figure>
+        <figure>
+          <img src="test.jpg">
+          <div id="rec_name">Recipe Name</div>
+        </figure>
+      </div>
+      <div id="pet_logo">
+        <img src="./res/logo.png">
+      </div>
+
+    <div>
   </body>
   <script>
     YUI().use('node', function(Y) {
