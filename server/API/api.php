@@ -11,7 +11,7 @@
 
 					$recipeId = $secureVars->secText("RecipeId", 11, REG_DIGIT_UNSIGNED);
 		    		
-	    		getRecipeImpl($recipeId);
+	    		getRecipe($recipeId);
 	    		break;
 	    	case "getRecipesByCategory":
 	    		$categoryId = $secureVars->secText("CategoryId", 11, REG_DIGIT_UNSIGNED);
@@ -25,13 +25,13 @@
 
 	    		searchRecipe($keywords, intval($page));
 	    		break;
-	    	case "randomRecipe":
-	    		randomRecipe("");
+	    	case "randomRecipeId":
+	    		randomRecipeId("");
 	    		break;
-	    	case "randomRecipeByCategory":
+	    	case "randomRecipeIdByCategory":
 	    		$category = $secureVars->secText("CategoryId", 11, REG_DIGIT_UNSIGNED);
 
-	    		randomRecipe($category);
+	    		randomRecipeId($category);
 	    		break;
 			}
 		}

@@ -1,7 +1,7 @@
 <?php
 require('DBaccess.php');
 
-function getRecipeImpl ( $recipeId ) {
+function getRecipe ( $recipeId ) {
     // This method not use _runQuery, because if it uses _runQuery then
     // it creates two DBacccess objects.
 
@@ -9,7 +9,7 @@ function getRecipeImpl ( $recipeId ) {
     $query = "SELECT * FROM RECIPE WHERE RecipeId = '$recipeId' ;";
     $result = $dba->doSelect($query);
 
-    $queryIngredients = "SELECT i.IngName, i.IngPhoto, i.Kcal, c.Amount 
+    $queryIngredients = "SELECT i.IngredientId, i.IngName, i.IngPhoto, i.Kcal, i.TypeId, c.Amount 
                             FROM CONTAINS c JOIN INGREDIENT i on c.IngredientId = i.ingredientId 
                             WHERE c.RecipeId = '$recipeId' ;";
     $result[0]['Ingredients'] = $dba->doSelect($queryIngredients);
@@ -50,10 +50,11 @@ function searchRecipe ( $keywords, $page ) {
     _returnJSON($result);
 }
 
-function randomRecipe ( $category ) {
-    $query = "SELECT * FROM RECIPE";
+function randomRecipeId ( $category ) {
+    //Use recipe, because all recipes should have the same probability. 
+    $query = "SELECT r.RecipeId FROM RECIPE r";
     if ($category != "") {
-        $query = $query." r JOIN RECIPE_CATEGORY rc ON r.RecipeId = rc.RecipeId WHERE CategoryId = '$category'";
+        $query = $query." JOIN RECIPE_CATEGORY rc ON r.RecipeId = rc.RecipeId WHERE CategoryId = '$category'";
     }
     $query = $query." ORDER BY RAND() LIMIT 1;";
 
