@@ -25,7 +25,14 @@
 
 	    		searchRecipe($keywords, intval($page));
 	    		break;
+	    	case "randomRecipe":
+	    		randomRecipe("");
+	    		break;
+	    	case "randomRecipeByCategory":
+	    		$category = $secureVars->secText("CategoryId", 11, REG_DIGIT_UNSIGNED);
 
+	    		randomRecipe($category);
+	    		break;
 			}
 		}
 	} catch (Exception $e) {
