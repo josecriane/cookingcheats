@@ -28,6 +28,9 @@ var init_recipe = function (Y, recipe){
   set_text(Y.one('#diners_name'), recipe.get('NumDiners'));
   set_text(Y.one('#time_name'), recipe.get('Time'));
   set_text(Y.one('#text'), recipe.get('RecDescription'));
+
+  //set_icons
+  shareButtons(Y.one('#social_icons'), recipe.get("RecName"), window.location);
 }
 
 var change_number_to_image = function (node, image, num) {
@@ -37,6 +40,14 @@ var change_number_to_image = function (node, image, num) {
     text += img_tag;
   }
   set_text(node, text);
+}
+
+function shareButtons(node, RecipeName, URL){
+  var text = encodeURIComponent("Cocinando " + RecipeName + " con " + URL);
+  var twitter = '<a class="social_icon" id="twitter" href="http://twitter.com/home?status=' + text + '" target="_blank"></a>';
+  var facebook = '<a class="social_icon" id="facebook" href="" targer="_self"></a>';
+  var google_plus = '<a class="social_icon" id="google_plus"></a>';
+  set_text(node, twitter+facebook+google_plus);
 }
 
 /*Search page functions */

@@ -38,11 +38,7 @@
             <div id="time"></div>
           </div>
         </div>
-        <div id="social_icons">
-          <div class="social_icon" id="twitter"></div>
-          <a class="social_icon" id="facebook" href="" targer="_self"></a>
-          <div class="social_icon" id="google_plus"></div>
-        </div>
+        <div id="social_icons"></div>
       </div>
     </div>
   </body>
