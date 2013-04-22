@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>CookingCheats</title>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.png" />
     <script src="http://yui.yahooapis.com/3.9.0/build/yui/yui-min.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/model.js"></script>
