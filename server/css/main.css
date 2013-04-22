@@ -262,12 +262,6 @@ header {
 
 /** BEGIN CSS to recipe Page **/
 
-/*
- * Recipe text box
- *
- *
- */
-
 #text {
   float: left;
   margin: 0px 5px 0px -1px;
@@ -281,12 +275,6 @@ header {
 }
 
 
-
-/* Recipe characteristics 
- *
- *
- *
- */
 #r_side {
   float: left;
   display: block;
@@ -295,7 +283,7 @@ header {
 
 #characteristics {
   width: 200px;
-  height: 240px;
+  height: 260px;
   background-color: #fff;
   border: 1px solid #010101;
   border-radius: 5px;
@@ -338,7 +326,7 @@ header {
 }
 
 #bottom-left {
-  margin-top: 230px;
+  margin-top: 250px;
   margin-left: -10px;
 }
 
@@ -347,7 +335,7 @@ header {
 }
 
 #bottom-right {
-  margin-top: 227px;
+  margin-top: 247px;
   margin-left: 176px;
 }
 
