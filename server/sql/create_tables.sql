@@ -43,11 +43,11 @@ CREATE TABLE IF NOT EXISTS `RECIPE` (
   `RecPhoto` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Time` int(4) NOT NULL,
   `Preparation` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `NumDiners` int(2) NOT NULL,
+  `NumDiners` int(2) NOT NULL DEFAULT '1',
   `Presentation` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Difficulty` int(1) DEFAULT NULL,
   `Video` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `Average` int(1) NOT NULL DEFAULT '5',
+  `Average` int(1) NOT NULL DEFAULT '1',
   `Country` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`RecipeId`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;

@@ -43,8 +43,9 @@ YUI().add('recipe', function(Y){
       Preparation: null,
       NumDinners: 0,
       Presentation: null,
-      Difficulty: 0,
-      Video: null
+      Difficulty: 1,
+      Video: null,
+      Average: 1
     }
   });
 }, 0.0, {requires: ['model', 'ingredient']});

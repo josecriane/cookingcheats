@@ -20,9 +20,11 @@ var set_text = function (node, text){
 
 var init_recipe = function (Y, recipe){
   set_text(Y.one('#rec_name'), recipe.get('RecName'));
-  set_text(Y.one('#difficulty_name'), recipe.get('Difficulty'));
+  //set_text(Y.one('#difficulty_name'), recipe.get('Difficulty'));
+  change_number_to_image(Y.one('#difficulty_name'), "chef_hat.png", recipe.get('Difficulty'));
+  //change_number_to_image(Y.one('#difficulty_name'), "chef_hat.png", 5);
   //set_text(Y.one('#average_name'), '5');
-  change_number_to_image(Y.one('#average_name'), "fork.png", 2)
+  change_number_to_image(Y.one('#average_name'), "fork.png", recipe.get('Average'));
   set_text(Y.one('#diners_name'), recipe.get('NumDiners'));
   set_text(Y.one('#time_name'), recipe.get('Time'));
   set_text(Y.one('#text'), recipe.get('RecDescription'));
