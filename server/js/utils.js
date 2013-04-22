@@ -18,15 +18,20 @@ var set_text = function (node, text){
   node.setHTML(text);
 }
 
-var init_recipe = function (Y, recipe){
+var add_meta_description = function (RecipeName, URL) {
+  var meta_des = document.createElement('meta');
+  meta_des.name = "description";
+  meta_des.content = encodeURIComponent("Cocinando " + RecipeName + " con CookingCheats " + URL);
+  document.getElementsByTagName('head').item(0).appendChild(meta_des);
+}
+
+var init_recipe = function (Y, recipe) {
+  add_meta_description(recipe.get('RecName'), window.location);
   set_text(Y.one('#rec_name'), recipe.get('RecName'));
-  //set_text(Y.one('#difficulty_name'), recipe.get('Difficulty'));
   change_number_to_image(Y.one('#difficulty_name'), "chef_hat.png", recipe.get('Difficulty'));
-  //change_number_to_image(Y.one('#difficulty_name'), "chef_hat.png", 5);
-  //set_text(Y.one('#average_name'), '5');
   change_number_to_image(Y.one('#average_name'), "fork.png", recipe.get('Average'));
   set_text(Y.one('#diners_name'), recipe.get('NumDiners'));
-  set_text(Y.one('#time_name'), recipe.get('Time'));
+  set_text(Y.one('#time_name'), recipe.get('Time')+" min");
   set_text(Y.one('#text'), recipe.get('RecDescription'));
 
   //set_icons
@@ -42,11 +47,17 @@ var change_number_to_image = function (node, image, num) {
   set_text(node, text);
 }
 
-function shareButtons(node, RecipeName, URL){
-  var text = encodeURIComponent("Cocinando " + RecipeName + " con " + URL);
-  var twitter = '<a class="social_icon" id="twitter" href="http://twitter.com/home?status=' + text + '" target="_blank"></a>';
-  var facebook = '<a class="social_icon" id="facebook" href="" targer="_self"></a>';
-  var google_plus = '<a class="social_icon" id="google_plus"></a>';
+var google_js = function () {
+  window.open(this.href, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");
+  return false;
+}
+
+var shareButtons = function (node, RecipeName, URL) {
+  var min_window = "onclick=\"window.open(this.href,  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;\"";
+  var text = encodeURIComponent("Cocinando " + RecipeName + " con CookingCheats " + URL);
+  var twitter = '<a class="social_icon" id="twitter" href="http://twitter.com/home?status=' + text + '" ' + min_window + 'target="_blank"></a>';
+  var facebook = '<a class="social_icon" id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=' + URL + '" ' + min_window + ' target="_blank"></a>';
+  var google_plus = '<a class="social_icon" id="google_plus" href="https://plus.google.com/share?url=' + URL + '" ' + min_window + ' target="_blank"></a>';
   set_text(node, twitter+facebook+google_plus);
 }
 

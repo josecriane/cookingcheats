@@ -4,7 +4,8 @@
 <html xmlns ="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <title>Tortilla de patatas y calabacín · CookingCheats</title>
+    <title>CookingCheats</title>
+    <meta charset="utf-8">
     <meta name="description" content="">
     <script src="http://yui.yahooapis.com/3.9.0/build/yui/yui-min.js"></script>
   </head>
