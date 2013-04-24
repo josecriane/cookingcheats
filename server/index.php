@@ -39,7 +39,7 @@
   </body>
   <script>
     YUI().use('node', function(Y) {
-        var current = Y.one('.menu_element');
+        var current = Y.one('#index_menu');
         current.addClass('current_element');
       });
   </script>

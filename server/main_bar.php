@@ -1,8 +1,8 @@
 <header>
   <div class="inner">
     <div id="menu">
-      <div class="menu_element"><a href="./index.php" id="index_label">Index</a></div>
-      <div class="menu_element"><a href="" id="about_label">About</a></div>
+      <a class="menu_element" id="index_menu" href="./index.php"><div id="index_label">Index</div></a>
+      <a class="menu_element" id="about_menu" href="./about.php"><div id="about_label">About</div></a>
     </div>
     <div class="pull_right">
       <form action="./search_recipes.php">

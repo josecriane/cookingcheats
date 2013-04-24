@@ -200,6 +200,50 @@ header {
 }
 /** END CSS to index page **/
 
+/** BEGIN CSS to about page **/
+
+.question{
+  font-weight: bold;
+}
+
+#description { 
+  line-height: 1.5em;
+}
+
+#buttons {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#buttons div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#info {
+  margin-bottom: 2em;
+}
+
+#future {
+  width: 45%;
+  display: inline-block;
+  margin-bottom: 2em;
+  margin-left: 1em;
+}
+
+#future ul {
+  margin-left: 2.5em;
+}
+
+#help {
+  width:45%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1.5em;
+}
+
+/** END CSS to about page **/
+
 /** BEGIN CSS to search page **/
 
 #recipes {
@@ -273,7 +317,6 @@ header {
   background-color: #fff;
   border: 1px solid #010101;
 }
-
 
 #r_side {
   float: left;
@@ -355,11 +398,6 @@ header {
   padding-right: 5px;
 }
 
-/* Social Icons
- *
- *
- *
- */
  #social_icons {
   float: left;
   margin-top: 10px;
@@ -386,12 +424,6 @@ header {
   background-image: url("../res/gplus_icon.png");
  }
 
-
-/* Recipe Menu, Description, Ingredients, Preparation, Presentation 
- *
- *
- *
- */
 
 #rec_menu {
   float: left;
